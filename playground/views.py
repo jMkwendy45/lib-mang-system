@@ -11,9 +11,10 @@ def playGround(request):
         message = "This mail is sent from django"
         mail = EmailMessage("Welcome mail", message, "support@libary.com", ['oluchi@gmail.com'])
         mail.attach_file('playground/static/image/img.png')
+        mail.send()
     except BadHeaderError:
         pass
-        return HttpResponse("welcome to he playground")
+    return HttpResponse("welcome to he playground")
 
 
 # try:
